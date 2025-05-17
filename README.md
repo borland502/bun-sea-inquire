@@ -1,40 +1,61 @@
-# bun-sea
+# bun-sea-inquire
 
-Bun Single Executable Application Template
+A CLI template for bootstrapping Bun applications with an interactive command menu interface.
 
-Provides a template project with a file layout and library selection
+## Features
 
-## Code Execution
+- Interactive command menu using Inquirer.js
+- Support for commands and nested subcommands
+- Built as a Single Executable Application (SEA) with Bun
+- DevContainer configuration for consistent development environments
+- Task automation with Taskfile.dev
 
-### From Source
+## Installation
 
-```shell
-    bun run src/main.ts hello
+### Prerequisites
+
+- [Bun](https://bun.sh/) runtime installed
+- Optional: [Task](https://taskfile.dev/) for build automation
+
+### Quick Install
+
+```bash
+# Clone the repository
+git clone https://github.com/borland502/bun-sea-inquire.git
+cd bun-sea-inquire
+
+# Allow direnv (this will automatically install dependencies)
+direnv allow
+
+# If not using direnv, install dependencies manually:
+bun install
+
+task build && task run
 ```
 
-### From Binary (~/.local/bin assumed to be in path)
+### Development
 
-```shell
-    task build && task run
+#### Installing task
+
+`./src/main.ts --> install --> task`
+
+#### Installing direnv
+
+direnv automatically loads and unloads environment variables based on the current directory.
+
+**macOS**:
+
+```bash
+brew install direnv
+
+# Ubuntu/Debian
+sudo apt-get install direnv
+
+# Fedora
+sudo dnf install direnv
+
+# Arch Linux
+sudo pacman -S direnv
+
+eval "$(direnv hook bash)"  # or zsh, fish, etc.
 ```
-
-### From XDG_BIN_HOME
-
-```shell
-    bun-sea hello
-```
-
-## Libraries
-
-1. [Bun](https://bun.sh/docs/bundler/executables)
-2. [Commander](https://github.com/tj/commander.js/tree/master)
-3. [Direnv](https://direnv.net)
-4. [Winston](https://github.com/winstonjs/winston)
-5. [Task](https://taskfile.dev)
-
-> If Task is not already installed it will be downloaded and placed in the $proj/bin folder
-
-## References
-
-- [Bunmagic](https://github.com/bunmagic/bunmagic/tree/main)
-- [Commander-template](https://github.com/Qw4z1/commander-template/tree/main)

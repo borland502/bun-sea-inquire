@@ -17,9 +17,9 @@ export interface AppConfig {
 export interface CommandConfig {
   name: string;
   description: string;
-  module?: string;
   subcommands?: boolean;
   children?: CommandConfig[];
+  options?: { flags: string; description: string; defaultValue?: any }[];
 }
 
 export interface Config {
