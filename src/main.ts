@@ -10,8 +10,8 @@ import { appConfig } from "./lib/config";
 
 async function main() {
   // Display app information
-  logger.info(`${appConfig.app.name} - ${appConfig.app.version}`);
-  logger.info(appConfig.app.description);
+  logger.debug(`${appConfig.app.name} - ${appConfig.app.version}`);
+  logger.debug(appConfig.app.description);
 
   // Prepare command choices for the main menu
   const mainChoices = appConfig.commands.map((cmd) => ({

@@ -1,17 +1,13 @@
-declare module "config" {
-  export interface IConfig {
-    get<T>(setting: string): T;
-    has(setting: string): boolean;
-  }
-
-  const config: IConfig;
-  export default config;
-}
-
 export interface AppConfig {
   name: string;
   version: string;
   description: string;
+}
+
+export interface CommandOptionConfig {
+  flags: string;
+  description: string;
+  defaultValue?: unknown;
 }
 
 export interface CommandConfig {
@@ -19,7 +15,7 @@ export interface CommandConfig {
   description: string;
   subcommands?: boolean;
   children?: CommandConfig[];
-  options?: { flags: string; description: string; defaultValue?: any }[];
+  options?: CommandOptionConfig[];
 }
 
 export interface Config {
